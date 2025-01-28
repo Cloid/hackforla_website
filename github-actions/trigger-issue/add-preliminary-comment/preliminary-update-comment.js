@@ -46,7 +46,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     // If the issue being assigned is also closed, do not run complexity eligibility check or post comments
     if (context.payload.issue.state === 'closed') {
       console.log('This issue is closed; will not run Complexity Eligibility check or post comments');
-      return true;
+      return;
     }
     
     // Get the latest developer in case there are multiple assignees
