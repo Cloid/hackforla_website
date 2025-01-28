@@ -20,16 +20,8 @@ async function checkComplexityEligibility(
   context,
   isAdminOrMerge
 ) {
-
-  // If the issue being assigned is also closed, skip complexity check
-  if (context.payload.issue.state === 'closed') {
-    console.log('This issue is closed; skip Complexity Eligibility check');
-    return true;
-  }
-  
   // If assignee is an admin or merge team member, skip complexity check
   if (isAdminOrMerge) {
-    console.log('Assignee is an Admin or Merge Team member; skip Complexity Eligibility check');
     return true;
   }
 
